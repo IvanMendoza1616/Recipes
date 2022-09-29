@@ -1,0 +1,417 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@-webkit-keyframes like-heart-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  15% {
+    opacity: 0.9;
+    transform: scale(1.2);
+  }
+  30% {
+    transform: scale(0.95);
+  }
+  45%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes like-heart-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  15% {
+    opacity: 0.9;
+    transform: scale(1.2);
+  }
+  30% {
+    transform: scale(0.95);
+  }
+  45%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes selector-animation {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  30% {
+    transform: scale(0.95);
+  }
+  45%, 100% {
+    transform: scale(1);
+  }
+}
+@keyframes selector-animation {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  30% {
+    transform: scale(0.95);
+  }
+  45%, 100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes fade-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background-color: rgb(247, 247, 247);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.nav-center {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.nav-center .nav-header {
+  padding: 0.5rem 1.5rem;
+  background-color: #0f3619;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.4);
+}
+.nav-center .nav-header .logo {
+  color: white;
+}
+.nav-center .nav-header .nav-toggle {
+  position: relative;
+  z-index: 11;
+  border: none;
+  font-size: 2.5rem;
+  color: white;
+  background-color: transparent;
+}
+.nav-center .nav-header .fix-toggle {
+  /*    
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 575px;
+  bottom: 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: #0f3619;
+  color: white;
+  padding: 1rem 3rem;*/
+  position: fixed;
+  left: 50%;
+  transform: translateX(-41.5px);
+  width: 100%;
+  max-width: 700px;
+  top: 0.5rem;
+  right: 1.5rem;
+}
+.nav-center .links {
+  z-index: 10;
+  position: fixed;
+  top: -100vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 700px;
+  height: 100vh;
+  background-color: rgba(15, 54, 25, 0.9725490196);
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  transition: all 0.5s ease-out;
+}
+.nav-center .show-links {
+  top: 0;
+}
+
+.hero-container {
+  width: 100%;
+  height: 20rem;
+  margin-bottom: 1rem;
+  background: url(https://thumbs.dreamstime.com/b/culinary-background-recipes-frame-fresh-vegetables-ingredients-cooking-food-copy-space-table-menu-place-text-180295228.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.hero-container .hero-text {
+  color: #0f3619;
+  padding: 0 2rem;
+  text-align: center;
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+}
+.hero-container .hero-text .first-line {
+  font-weight: 500;
+}
+.hero-container .hero-text .second-line {
+  font-weight: 700;
+}
+.hero-container .search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+}
+.hero-container .search-container .search-btn {
+  border: none;
+  cursor: pointer;
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: transparent;
+  color: #242424;
+}
+.hero-container .search-container .search-btn:hover {
+  transition: all 0.2s ease-in;
+  color: white;
+  background-color: #808080;
+}
+.hero-container .search-container .search-input {
+  padding: 1rem 2rem 1rem 1rem;
+  border: none;
+}
+
+.selector-container {
+  padding: 1.5rem 1rem 0 1rem;
+  display: flex;
+}
+.selector-container .selector {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selector-container .selector .selector-btn {
+  cursor: pointer;
+  padding: 1.6rem;
+  border-radius: 50%;
+  border: none;
+}
+.selector-container .selector .selector-btn:hover {
+  -webkit-animation: 0.5s selector-animation ease-in;
+          animation: 0.5s selector-animation ease-in;
+}
+.selector-container .selector .today {
+  background: url(https://images.immediate.co.uk/production/volatile/sites/30/2022/06/Chicken-chow-mein-7aeec1d.png);
+  background-size: cover;
+  background-position: center center;
+}
+.selector-container .selector .breakfast {
+  background: url(https://media.istockphoto.com/photos/breakfast-with-bacon-eggs-pancakes-and-toast-picture-id533645537?k=20&m=533645537&s=612x612&w=0&h=KJXCpAo9XQvMI_djcnRMSsz_Y7OGS6z3-8VThxWyR0Q=);
+  background-size: cover;
+  background-position: center center;
+}
+.selector-container .selector .lunch {
+  background: url(https://images.immediate.co.uk/production/volatile/sites/30/2013/05/HummusBowl-65a0050.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+.selector-container .selector .dinner {
+  background: url(https://images.immediate.co.uk/production/volatile/sites/30/2020/08/high-protein-dinners-slow-cooker-meatballs-image-5a04d02.jpg?quality=90&resize=768,574);
+  background-size: cover;
+  background-position: center center;
+}
+.selector-container .selector .favorite {
+  background: url(https://www.kindpng.com/picc/m/300-3002377_favorite-icon-png-image-free-download-searchpng-heart.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.selector-container .selector .selector-name {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.meals-container {
+  padding: 1rem;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.meals-container .search-for {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.meals-container .meal-day-container {
+  width: 45%;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  -webkit-animation: 0.3s fade-animation ease-in;
+          animation: 0.3s fade-animation ease-in;
+}
+.meals-container .meal-day-container .meal-day-title {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(15, 54, 25, 0.8901960784);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+.meals-container .meal-day-container .meal-day {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.meals-container .meal-day-container .meal-day .meal-image {
+  border-radius: 0 0 5px 5px;
+  height: 9rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.meals-container .meal-day-container .meal-day .meal-title {
+  cursor: pointer;
+  line-height: 1.2rem;
+  padding-top: 0.5rem;
+}
+.meals-container .meal-day-container .meal-day .meal-author {
+  padding-top: 0.3rem;
+  color: #575757;
+  font-size: 0.8rem;
+}
+.meals-container .meal-day-container .meal-day .heart {
+  position: absolute;
+  cursor: pointer;
+  font-size: 1.5rem;
+  top: 6.5rem;
+  right: 0.5rem;
+  color: rgb(224, 224, 224);
+}
+.meals-container .meal-day-container .meal-day .heart-clicked {
+  -webkit-animation: 2s like-heart-animation ease-in;
+          animation: 2s like-heart-animation ease-in;
+  color: rgb(184, 30, 30);
+}
+
+.recipe-container {
+  -webkit-animation: 0.3s fade-animation ease-in;
+          animation: 0.3s fade-animation ease-in;
+  margin: 1rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.recipe-container .recipe-image {
+  width: 100%;
+  height: 40vh;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+}
+.recipe-container .recipe-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+.recipe-container .prep-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dddddd;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+.recipe-container .prep-container .prep-item {
+  width: 50%;
+  text-align: center;
+}
+.recipe-container .prep-container .prep-item i {
+  padding: 1rem 0.5rem;
+}
+.recipe-container .recipe-description {
+  text-align: center;
+}
+.recipe-container .list-container h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.recipe-container .ingredients li {
+  list-style: disc outside none;
+  display: list-item;
+  margin-left: 2em;
+}
+.recipe-container .steps li {
+  list-style: decimal outside none;
+  display: list-item;
+  margin-left: 2rem;
+}
+.recipe-container .recipe-btn {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 700px;
+  bottom: 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: #0f3619;
+  color: white;
+  padding: 1rem 3rem;
+}/*# sourceMappingURL=styles.css.map */
