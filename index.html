@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipes App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-center">
+        <div class="nav-header">
+          <h1 class="logo">Morita Recipes</h1>
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <ul class="links">
+          <li><a id="home" href="">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="hero-container">
+        <div class="hero-text">
+          <h4 class="first-line">Search over</h4>
+          <h4 class="second-line">10,000 recipes</h4>
+        </div>
+        <form class="search-container">
+          <input placeholder="Search for awesome recipes" type="text" class="search-input" />
+          <button class="search-btn" type="submit"><i class="search-icon fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </section>
+      <section class="selector-container">
+        <div class="selector">
+          <button class="selector-btn today" type="button" data-id="today"></button>
+          <p class="selector-name">Today's Meals</p>
+        </div>
+        <div class="selector">
+          <button class="selector-btn breakfast" type="button" data-id="breakfast"></button>
+          <p class="selector-name">Breakfasts</p>
+        </div>
+        <div class="selector">
+          <button class="selector-btn lunch" type="button" data-id="lunch"></button>
+          <p class="selector-name">Lunches</p>
+        </div>
+        <div class="selector">
+          <button class="selector-btn dinner" type="button" data-id="dinner"></button>
+          <p class="selector-name">Dinners</p>
+        </div>
+        <div class="selector">
+          <button class="selector-btn favorite" type="button" data-id="favorite"></button>
+          <p class="selector-name">Favorites</p>
+        </div>
+      </section>
+      <section class="meals-container"></section>
+      <section class="recipe-container"></section>
+    </main>
+  </body>
+</html>
